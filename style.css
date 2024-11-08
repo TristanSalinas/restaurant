@@ -94,7 +94,8 @@ h4 {
 LAYOUT
 */
 .header,
-.content {
+.content,
+.footer__container {
   max-width: min(100vw, 1400px);
   margin-inline: auto;
 }
@@ -393,5 +394,17 @@ home special
   .special-section__menu-wrapper {
     display: flex;
     gap: 2rem;
+  }
+
+  /* 
+  footer
+  */
+
+  .footer__container {
+    display: flex;
+    gap: 2rem;
+  }
+  .footer__container > * {
+    flex: 1;
   }
 }
