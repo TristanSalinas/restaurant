@@ -74,6 +74,7 @@ h1 {
 h2 {
   text-align: center;
   font-size: var(--fs-h2);
+  margin-top: 3rem;
 }
 h3 {
   text-align: center;
@@ -169,7 +170,8 @@ home carrousel
   display: flex;
   align-items: center;
   background-color: #4c434384;
-  padding-inline: 0.5rem;
+  padding-inline: calc(0.5rem + 1%);
+
   color: white;
   cursor: pointer;
 }
@@ -309,4 +311,82 @@ FOOTER
 .footer__top {
   padding: 2rem 1rem;
   background-image: url("./ressources/images/footer-bg.jpg");
+}
+
+/*----------------------------------------------------------
+RESPONSIVE
+*/
+
+/* 
+Tablette
+*/
+
+@media screen and (min-width: 780px) and (max-width: 1100px) {
+  /*
+  header
+  */
+  .header__nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--cream);
+  }
+  .header__button {
+    width: 5rem;
+    border: none;
+  }
+  .header__button:first-of-type {
+    border: none;
+  }
+}
+
+/*
+Desktop
+*/
+
+@media screen and (min-width: 1101px) {
+  /*
+  header
+  */
+  .header {
+    padding-top: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .header__title-wrapper {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .header__button {
+    height: fit-content;
+    width: 5rem;
+    border: none;
+  }
+  .header__button:first-of-type {
+    border: none;
+  }
+
+  /*
+home welcome
+*/
+
+  .welcome-section__content {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .welcome-section img {
+    width: 40%;
+  }
+
+  /*
+home special
+*/
+  .special-section__menu-wrapper {
+    display: flex;
+    gap: 2rem;
+  }
 }
