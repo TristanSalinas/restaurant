@@ -138,6 +138,10 @@ header {
   border: none;
   border-bottom: 1px solid black;
 }
+.header__button--active {
+  background-color: var(--brown);
+  color: white;
+}
 
 /*
 CONTENT
@@ -348,7 +352,7 @@ Desktop
   header
   */
   .header {
-    padding-top: 1rem;
+    padding: 1rem;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -376,6 +380,7 @@ home welcome
 
   .welcome-section__content {
     display: flex;
+    gap: 1rem;
     flex-direction: row-reverse;
   }
   .welcome-section img {
