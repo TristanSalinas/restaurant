@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&family=Merienda:wght@300..900&display=swap");
+
+:root {
+  --fs-default: calc(18 / 16 * 1rem);
+  --fs-h1: calc(30 / 16 * 1rem);
+  --fs-h2: calc(25 / 16 * 1rem);
+  --fs-h3: calc(20 / 16 * 1rem);
+  --fs-h4: calc(18 / 16 * 1rem);
+
+  --fs-menu-price: calc(50 / 16 * 1rem);
+  --fs-menu-text: calc(15 / 16 * 1rem);
+  --fs-little-default: 1rem;
+
+  --brown: #4c4343;
+  --cream: #ebe3db;
+  --red: #950000;
+}
+
+/* ---------------------------------------------
+RESET
+*/
+
+* {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+}
+img {
+  max-width: 100%;
+}
+/* -----------------------------------------------
+BASE RULES
+*/
+
+body {
+  font-family: Athiti;
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: var(--fs-default);
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: Merienda;
+}
+h1,
+h2,
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+h1::before,
+h1::after,
+h2::before,
+h2::after,
+h3::before,
+h3::after {
+  font-family: "FontAwesome";
+  content: " \f005  ";
+  color: var(--red);
+  font-size: 0.75em;
+}
+h1 {
+  text-transform: uppercase;
+  font-size: var(--fs-h1);
+}
+h2 {
+  text-align: center;
+  font-size: var(--fs-h2);
+}
+h3 {
+  text-align: center;
+  font-size: var(--fs-h3);
+}
+h4 {
+  font-size: var(--fs-h4);
+}
+.footer p {
+  font-size: var(--fs-little-default);
+}
+
+.price {
+  font-size: var(--fs-menu-price);
+}
+/* -----------------------------------------------
+LAYOUT
+*/
+.header,
+.content {
+  max-width: min(100vw, 1400px);
+  margin-inline: auto;
+}
+.footer {
+  width: 100%;
+}
+
+/* -------------------------------------------------
+Styles
+*/
+
+/* 
+Header
+*/
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header__logo {
+  width: 10rem;
+  height: auto;
+}
+.header__button:first-of-type {
+  border-top: 1px solid black;
+}
+.header__button {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: var(--fs-default);
+  background-color: var(--cream);
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+/*
+CONTENT
+*/
+
+.content {
+  padding: 1rem;
+  width: 100%;
+  padding-top: 3rem;
+}
+
+/*
+home carrousel
+*/
+.carrousel {
+  width: 100%;
+  --transform-value: 0%;
+}
+.carrousel__content {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.carrousel__content .left,
+.carrousel__content .right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  background-color: #4c434384;
+  padding-inline: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
+.carrousel__content .right {
+  right: 0;
+}
+.carrousel img {
+  display: block;
+  width: 100%;
+  transform: translateX(var(--transform-value));
+  transition: transform 1s ease;
+}
+
+.carrousel__nav {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carrousel__circle {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 1rem;
+  background-color: var(--cream);
+}
+
+.carrousel__circle--active {
+  background-color: var(--red);
+}
+
+/*
+home welcome
+*/
+.welcome-section img {
+  width: 100%;
+  height: auto;
+}
+
+/*
+home special menus
+*/
+
+.special-section__menu {
+  padding-top: 1px;
+  background-color: var(--cream);
+  margin-bottom: 1.5rem;
+}
+
+.special-section__img-wrapper {
+  position: relative;
+  padding: 0;
+  height: fit-content;
+}
+.special-section__img-wrapper img {
+  display: block;
+}
+
+.special-section__img-hover {
+  visibility: hidden;
+  position: absolute;
+  inset: 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #4c4343a2;
+  color: white;
+  font-family: Merienda;
+}
+.special-section__img-wrapper:hover .special-section__img-hover {
+  visibility: visible;
+}
+
+.special-section__menu-details {
+  border-bottom: 1px dashed black;
+  font-weight: 600;
+  margin: 0;
+  padding-block: 0.8em;
+}
+.special-section__menu-details::before {
+  font-family: "FontAwesome";
+  content: " \f005 ";
+  margin-right: 0.5rem;
+  color: var(--red);
+  font-size: 0.5em;
+  padding-left: 1.5rem;
+}
+
+.special-section__button-wrapper {
+  display: flex;
+}
+.special-section__see-more-btn {
+  flex: 1;
+  margin: 1rem;
+  display: inline;
+  border: none;
+  font-weight: 600;
+  color: white;
+  background-color: var(--brown);
+  box-shadow: 2px 2px 2px silver;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5em;
+}
+.special-section__see-more-btn::before {
+  content: "";
+  background-image: url("./ressources/images/fork-knife.svg");
+  display: block;
+  height: 2em;
+  width: 2em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*--------------------------------------------------------
+FOOTER
+*/
+
+.footer {
+  color: white;
+  text-align: center;
+}
+.footer p {
+  font-size: var(--fs-little-default);
+}
+
+.footer h4 {
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed white;
+}
+.footer__top {
+  padding: 2rem 1rem;
+  background-image: url("./ressources/images/footer-bg.jpg");
+}
